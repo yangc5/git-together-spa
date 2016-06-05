@@ -11,3 +11,10 @@
 /log/*
 !/log/.keep
 /tmp
+client/node_modules
+client/npm-debug.log
+client/dist
+client/.tmp
+client/.sass-cache
+client/bower_components
+client/.idea
