@@ -11,6 +11,7 @@ angular
   .module('sbAdminApp', [
     'oc.lazyLoad',
     'ui.router',
+    'ngResource',
     'ui.bootstrap',
     'angular-loading-bar',
   ])
@@ -74,9 +75,10 @@ angular
             }
         }
     })
-      .state('dashboard.blank',{
-        templateUrl:'views/pages/blank.html',
-        url:'/blank'
+      .state('dashboard.groups',{
+        templateUrl:'views/pages/groups.html',
+        url:'/groups',
+        controller: 'GroupsCtrl'
     })
       .state('login',{
         templateUrl:'views/pages/login.html',
@@ -86,4 +88,9 @@ angular
         templateUrl:'views/ui-elements/notifications.html',
         url:'/notifications'
     })
-  }]);
+  }])
+  .factory('Group', ['$resource', function($resource) {
+  return $resource('/api/groups/:id.json', null, {
+    'update': { method:'PUT' }
+  });
+}]);
