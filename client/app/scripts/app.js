@@ -83,7 +83,8 @@ angular
     })
       .state('login',{
         templateUrl:'views/pages/login.html',
-        url:'/login'
+        url:'/login',
+        controller: 'UserSessionsCtrl'
     })
       .state('dashboard.notifications',{
         templateUrl:'views/ui-elements/notifications.html',
