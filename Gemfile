@@ -7,8 +7,11 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-
 gem 'pg'
+
+gem 'devise_token_auth'
+
+gem 'omniauth'
 
 group :test do
 	gem 'rspec-rails'
