@@ -14,6 +14,7 @@ angular
     'ngResource',
     'ui.bootstrap',
     'angular-loading-bar',
+    'ng-token-auth'
   ])
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
 
