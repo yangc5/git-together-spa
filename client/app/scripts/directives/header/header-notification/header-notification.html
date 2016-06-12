@@ -4,11 +4,23 @@
             <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
         </a>
         <ul class="dropdown-menu dropdown-user">
+          <div ng-if="loggedIn === true">
             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
             </li>
             <li class="divider"></li>
-            <li><a ui-sref="login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            <li><a href="#" ng-click='signOut()'><i class="fa fa-sign-out fa-fw"></i> Logout</a>
             </li>
+          </div>
+
+          <div ng-if="loggedIn !== true">
+            <li>
+              <a ui-sref="login"><i class="fa fa-sign-in fa-fw"></i>Login</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a ui-sref="signup"><i class="fa fa-user fa-fw"></i>Register</a>
+            </li>
+          </div>
         </ul>
     </li>
 </ul>

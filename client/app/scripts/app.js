@@ -108,6 +108,14 @@ angular
 }])
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function() {
+      $rootScope.loggedIn=true;
       $location.path('/');
+
+
     });
+    $rootScope.$on('auth:logout-success', function(){
+      $rootScope.loggedIn=false;
+      console.log('logged out!');
+      console.log($rootScope.loggedIn);
+    })
 }]);

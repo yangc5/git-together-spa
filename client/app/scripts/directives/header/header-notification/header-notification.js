@@ -12,7 +12,6 @@ angular.module('sbAdminApp')
         templateUrl:'scripts/directives/header/header-notification/header-notification.html',
         restrict: 'E',
         replace: true,
+				controller: 'UserSessionsCtrl as ctrl',
     	}
 	});
-
-
