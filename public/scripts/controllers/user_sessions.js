@@ -1,0 +1,1 @@
+"use strict";angular.module("sbAdminApp").controller("UserSessionsCtrl",["$scope","$auth","$location",function($scope,$auth,$location){$scope.handleLoginBtnClick=function(){$auth.submitLogin($scope.loginFrom)}}]);
