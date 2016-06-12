@@ -11,5 +11,8 @@ angular.module('sbAdminApp')
   .controller('UserSessionsCtrl', ['$scope', '$auth', '$location', function ($scope, $auth, $location) {
     $scope.handleLoginBtnClick = function() {
       $auth.submitLogin($scope.loginFrom);
-    }
+    };
+    $scope.$on('auth:login-error', function(ev, reason){
+      $scope.error = reason.errors[0];
+    });
   }]);
