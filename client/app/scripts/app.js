@@ -86,6 +86,11 @@ angular
         url:'/groups',
         controller: 'GroupsCtrl'
     })
+      .state('signup',{
+        templateUrl:'views/pages/signup.html',
+        url:'/signup',
+        controller:'UserRegistrationsCtrl'
+    })
       .state('login',{
         templateUrl:'views/pages/login.html',
         url:'/login',
