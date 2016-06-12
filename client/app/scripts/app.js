@@ -116,6 +116,5 @@ angular
     $rootScope.$on('auth:logout-success', function(){
       $rootScope.loggedIn=false;
       console.log('logged out!');
-      console.log($rootScope.loggedIn);
     })
 }]);

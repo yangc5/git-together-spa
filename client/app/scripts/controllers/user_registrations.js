@@ -8,8 +8,9 @@
  * Controller of the fakeLunchHubApp
  */
 angular.module('sbAdminApp')
-  .controller('UserRegistrationsCtrl', ['$scope', function ($scope) {
-    $scope.handleRegBtnClick = function() {
+  .controller('UserRegistrationsCtrl', ['$scope', '$auth', function ($scope, $auth) {
+    $scope.signUp = function() {
+      console.log('using controller!');
       $auth.submitRegistration($scope.registrationForm)
       .then(function(){
         $auth.submitLogin({
