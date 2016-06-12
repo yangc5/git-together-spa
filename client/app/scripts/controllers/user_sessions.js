@@ -7,6 +7,9 @@
  * # UserSessionsCtrl
  * Controller of the fakeLunchHubApp
  */
-angular.module('fakeLunchHubApp')
-  .controller('UserSessionsCtrl', ['$scope', function ($scope) {
+angular.module('sbAdminApp')
+  .controller('UserSessionsCtrl', ['$scope', '$auth', '$location', function ($scope, $auth, $location) {
+    $scope.handleLoginBtnClick = function() {
+      $auth.submitLogin($scope.loginFrom);
+    }
   }]);

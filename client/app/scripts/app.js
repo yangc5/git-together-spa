@@ -16,6 +16,11 @@ angular
     'angular-loading-bar',
     'ng-token-auth'
   ])
+  .config(function($authProvider) {
+    $authProvider.configure({
+      apiUrl: '/api'
+    });
+  })
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
 
     $ocLazyLoadProvider.config({
@@ -95,4 +100,9 @@ angular
   return $resource('/api/groups/:id.json', null, {
     'update': { method:'PUT' }
   });
+}])
+  .run(['$rootScope', '$location', function($rootScope, $location) {
+    $rootScope.$on('auth:login-success', function() {
+      $location.path('/');
+    });
 }]);
