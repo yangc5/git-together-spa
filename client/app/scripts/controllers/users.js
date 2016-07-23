@@ -9,5 +9,5 @@
  */
 angular.module('sbAdminApp')
   .controller('UsersCtrl', ['$scope', 'User', function ($scope, User) {
-    $scope.groups = User.query();
+    $scope.users = User.query();
   }]);
