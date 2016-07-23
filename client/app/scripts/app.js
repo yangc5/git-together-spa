@@ -86,6 +86,11 @@ angular
         url:'/groups',
         controller: 'GroupsCtrl'
     })
+      .state('dashboard.users',{
+        templateUrl:'views/pages/users.html',
+        url:'/users',
+        controller: 'UsersCtrl'
+    })
       .state('signup',{
         templateUrl:'views/pages/signup.html',
         url:'/signup',
@@ -101,17 +106,20 @@ angular
         url:'/notifications'
     })
   }])
-  .factory('Group', ['$resource', function($resource) {
-  return $resource('/api/groups/:id.json', null, {
-    'update': { method:'PUT' }
-  });
-}])
+    .factory('Group', ['$resource', function($resource) {
+    return $resource('/api/groups/:id.json', null, {
+      'update': { method:'PUT' }
+    });
+  }])
+    .factory('User', ['$resource', function($resource) {
+      return $resource('/api/users/:id.json', null, {
+        'update': { method:'PUT'}
+      })
+    }])
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('auth:login-success', function() {
       $rootScope.loggedIn=true;
       $location.path('/');
-
-
     });
     $rootScope.$on('auth:logout-success', function(){
       $rootScope.loggedIn=false;
